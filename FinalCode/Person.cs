@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OODFinal.Untitled
+namespace FinalCode
 {
 	public class Person
 	{
@@ -16,18 +16,22 @@ namespace OODFinal.Untitled
 
 		public Person(string name, Household household)
 		{
-			throw new NotImplementedException();
+			_Name = name;
+			_Chores = new List<Chore>();
+			_Household = household;
+			_Payments = new List<Payment>();
+			_TotalSpent = 0;
 		}
 
 		public string Name
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _Name;
 			}
 			set
 			{
-				throw new NotImplementedException();
+				_Name = value;
 			}
 		}
 
@@ -35,17 +39,21 @@ namespace OODFinal.Untitled
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _TotalSpent;
 			}
 			set
 			{
-				throw new NotImplementedException();
+				_TotalSpent = value;
 			}
 		}
 
-		private void AddChore(Chore chore)
+		public void AddChore(Chore chore)
 		{
-			throw new NotImplementedException();
+			_Chores.Add(chore);
+		}
+
+		public void RemoveChore(Chore chore) {
+			_Chores.Remove(chore);
 		}
 	}
 }

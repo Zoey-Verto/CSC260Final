@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OODFinal.Untitled
+namespace FinalCode
 {
 	public class Payment
 	{
@@ -13,18 +13,19 @@ namespace OODFinal.Untitled
 
 		public Payment(double amount, string desc = "No description")
 		{
-			throw new NotImplementedException();
+			_Amount = amount;
+			_Description = desc;
 		}
 
 		public double Amount
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _Amount;
 			}
 			set
 			{
-				throw new NotImplementedException();
+				_Amount = value;
 			}
 		}
 
@@ -32,11 +33,11 @@ namespace OODFinal.Untitled
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _Description;
 			}
 			set
 			{
-				throw new NotImplementedException();
+				_Description = value;
 			}
 		}
 	}

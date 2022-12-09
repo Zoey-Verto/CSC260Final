@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OODFinal.Untitled
+namespace FinalCode
 {
 	public class Chore
 	{
@@ -14,18 +14,20 @@ namespace OODFinal.Untitled
 
 		public Chore(string name, string desc = "No description")
 		{
-			throw new NotImplementedException();
+			_Name = name;
+			_Description = desc;
+			_Assigned = false;
 		}
 
 		public string Name
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _Name;
 			}
 			set
 			{
-				throw new NotImplementedException();
+				_Name = value;
 			}
 		}
 
@@ -33,11 +35,11 @@ namespace OODFinal.Untitled
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _Description;
 			}
 			set
 			{
-				throw new NotImplementedException();
+				_Description = value;
 			}
 		}
 
@@ -45,11 +47,11 @@ namespace OODFinal.Untitled
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _Assigned;
 			}
 			set
 			{
-				throw new NotImplementedException();
+				_Assigned = value;
 			}
 		}
 	}

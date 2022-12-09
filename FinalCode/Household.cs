@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OODFinal.Untitled
+namespace FinalCode
 {
 	public class Household
 	{
@@ -15,18 +15,21 @@ namespace OODFinal.Untitled
 
 		public Household(string houseHoldName)
 		{
-			throw new NotImplementedException();
+			_HouseholdName = houseHoldName;
+			_Residents = new List<Person>();
+			_Chores = new List<Chore>();
+			_TotalMoneySpent = 0;
 		}
 
 		public string HouseholdName
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _HouseholdName;
 			}
 			set
 			{
-				throw new NotImplementedException();
+				_HouseholdName = value;
 			}
 		}
 
@@ -34,40 +37,45 @@ namespace OODFinal.Untitled
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _TotalMoneySpent;
 			}
 			set
 			{
-				throw new NotImplementedException();
+				_TotalMoneySpent = value;
 			}
 		}
 
-		private Person CreatePerson(string name)
+		public Person CreatePerson(string name)
 		{
-			throw new NotImplementedException();
+			return new Person(name, this);
 		}
 
-		private void AddPerson(string name)
+		public void AddPerson(string name)
 		{
-			throw new NotImplementedException();
+			Person person = CreatePerson(name);
+			_Residents.Add(person);
 		}
 
-		private Chore CreateChore(string name, string desc)
+        public Chore CreateChore(string name, string desc)
 		{
-			throw new NotImplementedException();
+			Chore chore = new Chore(name, desc);
+			_Chores.Add(chore);
+			return chore;
 		}
 
-		private void AssignChore(Person person, Chore chore)
+        public void AssignChore(Person person, Chore chore)
 		{
-			throw new NotImplementedException();
+			person.AddChore(chore);
+			chore.Assigned = true;
 		}
 
-		private void UnassignChore(Person person, Chore chore)
+        public void UnassignChore(Person person, Chore chore)
 		{
-			throw new NotImplementedException();
+			person.RemoveChore(chore);
+			chore.Assigned = false;
 		}
 
-		private void BalancePayments()
+        public void BalancePayments()
 		{
 			throw new NotImplementedException();
 		}
