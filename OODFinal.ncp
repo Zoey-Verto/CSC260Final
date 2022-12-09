@@ -7,52 +7,96 @@
       <Entity type="Class">
         <Name>Household</Name>
         <Access>Public</Access>
-        <Location left="395" top="33" />
-        <Size width="162" height="216" />
+        <Location left="317" top="18" />
+        <Size width="299" height="315" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">private string _HouseholdName</Member>
         <Member type="Field">private List&lt;Person&gt; _Residents</Member>
         <Member type="Field">private List&lt;Chore&gt; _Chores</Member>
         <Member type="Field">private double _TotalMoneySpent</Member>
-        <Member type="Method">public void AssignChore(Person person, Chore chore)</Member>
-        <Member type="Method">public void UnassignChore(Person person, Chore chore)</Member>
-        <Member type="Method">public void BalancePayments()</Member>
+        <Member type="Constructor">public Household(string houseHoldName)</Member>
+        <Member type="Property">public string HouseholdName { get; set; }</Member>
+        <Member type="Property">public double TotalMoneySpent { get; set; }</Member>
+        <Member type="Method">private Person CreatePerson(string name)</Member>
+        <Member type="Method">private void AddPerson(string name)</Member>
+        <Member type="Method">private Chore CreateChore(string name, string desc)</Member>
+        <Member type="Method">private void AssignChore(Person person, Chore chore)</Member>
+        <Member type="Method">private void UnassignChore(Person person, Chore chore)</Member>
+        <Member type="Method">private void BalancePayments()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Person</Name>
         <Access>Public</Access>
-        <Location left="229" top="337" />
-        <Size width="162" height="216" />
+        <Location left="496" top="392" />
+        <Size width="246" height="230" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">private string _Name</Member>
         <Member type="Field">List&lt;Chore&gt; _Chores</Member>
         <Member type="Field">private Household _Household</Member>
         <Member type="Field">private List&lt;Payment&gt; _Payments</Member>
         <Member type="Field">private double _TotalSpent</Member>
+        <Member type="Constructor">public Person(string name, Household household)</Member>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">public double TotalSpent { get; set; }</Member>
+        <Member type="Method">private void AddChore(Chore chore)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Payment</Name>
         <Access>Public</Access>
-        <Location left="832" top="337" />
-        <Size width="162" height="216" />
+        <Location left="829" top="392" />
+        <Size width="222" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private double _Amount</Member>
         <Member type="Field">private string _Description</Member>
+        <Member type="Constructor">public Payment(double amount, string desc = "No description")</Member>
+        <Member type="Property">public double Amount { get; set; }</Member>
+        <Member type="Property">public string Description { get; set; }</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Chore</Name>
         <Access>Public</Access>
-        <Location left="577" top="337" />
-        <Size width="162" height="216" />
+        <Location left="215" top="392" />
+        <Size width="203" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private string _Name</Member>
         <Member type="Field">private string _Description</Member>
         <Member type="Field">private bool _Assigned</Member>
+        <Member type="Constructor">public Chore(string name, string desc = "No description")</Member>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">public string Description { get; set; }</Member>
+        <Member type="Property">public bool Assigned { get; set; }</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
     <Containers />
-    <Relationships />
+    <Relationships>
+      <Relationship type="Association" first="1" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
   </ProjectItem>
 </Project>
