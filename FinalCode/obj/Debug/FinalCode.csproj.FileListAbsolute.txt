@@ -9,3 +9,4 @@ C:\Users\Zoey\Desktop\School Stuff\Year 4\Object Oriented\!Final\CSC260Final\Fin
 C:\Users\Zoey\Desktop\School Stuff\Year 4\Object Oriented\!Final\CSC260Final\FinalCode\obj\Debug\FinalCode.csproj.CoreCompileInputs.cache
 C:\Users\Zoey\Desktop\School Stuff\Year 4\Object Oriented\!Final\CSC260Final\FinalCode\obj\Debug\FinalCode.exe
 C:\Users\Zoey\Desktop\School Stuff\Year 4\Object Oriented\!Final\CSC260Final\FinalCode\obj\Debug\FinalCode.pdb
+C:\Users\Zoey\Desktop\School Stuff\Year 4\Object Oriented\!Final\CSC260Final\FinalCode\obj\Debug\FinalCode.uc_PersonPayTotal.resources

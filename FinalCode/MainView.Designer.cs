@@ -23,20 +23,11 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-            this.label_MainHouseholdName = new System.Windows.Forms.Label();
             this.btn_MainAddPerson = new System.Windows.Forms.Button();
             this.txt_MainAddPersonName = new System.Windows.Forms.TextBox();
             this.panel_MainPersonHolder = new System.Windows.Forms.FlowLayoutPanel();
+            this.txt_HouseholdName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // label_MainHouseholdName
-            // 
-            this.label_MainHouseholdName.AutoSize = true;
-            this.label_MainHouseholdName.Location = new System.Drawing.Point(12, 9);
-            this.label_MainHouseholdName.Name = "label_MainHouseholdName";
-            this.label_MainHouseholdName.Size = new System.Drawing.Size(89, 13);
-            this.label_MainHouseholdName.TabIndex = 1;
-            this.label_MainHouseholdName.Text = "Household Name";
             // 
             // btn_MainAddPerson
             // 
@@ -61,19 +52,28 @@
             this.panel_MainPersonHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panel_MainPersonHolder.Location = new System.Drawing.Point(15, 52);
             this.panel_MainPersonHolder.Name = "panel_MainPersonHolder";
-            this.panel_MainPersonHolder.Size = new System.Drawing.Size(284, 96);
+            this.panel_MainPersonHolder.Size = new System.Drawing.Size(284, 314);
             this.panel_MainPersonHolder.TabIndex = 4;
             this.panel_MainPersonHolder.WrapContents = false;
+            // 
+            // txt_HouseholdName
+            // 
+            this.txt_HouseholdName.Location = new System.Drawing.Point(15, 12);
+            this.txt_HouseholdName.Name = "txt_HouseholdName";
+            this.txt_HouseholdName.Size = new System.Drawing.Size(130, 20);
+            this.txt_HouseholdName.TabIndex = 5;
+            this.txt_HouseholdName.Text = "Default Household";
+            this.txt_HouseholdName.TextChanged += new System.EventHandler(this.txt_HouseholdName_TextChanged);
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(417, 599);
+            this.Controls.Add(this.txt_HouseholdName);
             this.Controls.Add(this.panel_MainPersonHolder);
             this.Controls.Add(this.txt_MainAddPersonName);
             this.Controls.Add(this.btn_MainAddPerson);
-            this.Controls.Add(this.label_MainHouseholdName);
             this.Name = "MainView";
             this.Text = "Main View";
             this.ResumeLayout(false);
@@ -82,10 +82,10 @@
 		}
 
 		#endregion
-		private System.Windows.Forms.Label label_MainHouseholdName;
         private System.Windows.Forms.Button btn_MainAddPerson;
         private System.Windows.Forms.TextBox txt_MainAddPersonName;
         private System.Windows.Forms.FlowLayoutPanel panel_MainPersonHolder;
+        private System.Windows.Forms.TextBox txt_HouseholdName;
     }
 }
 

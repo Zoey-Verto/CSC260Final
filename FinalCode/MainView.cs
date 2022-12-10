@@ -11,8 +11,7 @@ using System.Windows.Forms;
 namespace FinalCode {
 	
 	public partial class MainView : Form {
-		int numPeople = 0;
-		List<uc_PersonPayTotal> PayTotals = new List<uc_PersonPayTotal>();
+
         public MainView() {
 			InitializeComponent();
 			
@@ -24,20 +23,16 @@ namespace FinalCode {
 			name = txt_MainAddPersonName.Text;
 			//txt_MainAddPersonName.Text = "";
 
-			PayTotals.Add(new uc_PersonPayTotal());
+			Program.PayTotals.Add(new uc_PersonPayTotal());
+			Program.PayTotals[Program.numPeople].PersonName = name;
 
-			/*PayTotals[numPeople].
+			panel_MainPersonHolder.Controls.Add(Program.PayTotals[Program.numPeople]);
+            Program.numPeople++;
+		}
 
-			personNames.Add(new Label());
-			personNames[numPeople].Text = name;
+		private void txt_HouseholdName_TextChanged(object sender, EventArgs e)
+		{
 
-			personTotals.Add(new Label());
-			personTotals[numPeople].Text = "$0.00";
-
-			panel_MainPersonHolder.Controls.Add(personNames[numPeople]);
-			panel_MainPersonHolder.Controls.Add(personTotals[numPeople]);
-			numPeople++;
-			*/
 		}
 	}
 }

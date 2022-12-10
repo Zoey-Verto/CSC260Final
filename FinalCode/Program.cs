@@ -6,10 +6,13 @@ using System.Windows.Forms;
 
 namespace FinalCode {
 	internal static class Program {
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
+		public static string HouseholdName = "Global";
+        public static int numPeople = 0;
+        public static List<uc_PersonPayTotal> PayTotals = new List<uc_PersonPayTotal>();
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
 		static void Main() {
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
