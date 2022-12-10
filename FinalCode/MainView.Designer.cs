@@ -26,7 +26,7 @@
             this.label_MainHouseholdName = new System.Windows.Forms.Label();
             this.btn_MainAddPerson = new System.Windows.Forms.Button();
             this.txt_MainAddPersonName = new System.Windows.Forms.TextBox();
-            this.table_MainPersonHolder = new System.Windows.Forms.TableLayoutPanel();
+            this.panel_MainPersonHolder = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // label_MainHouseholdName
@@ -55,28 +55,22 @@
             this.txt_MainAddPersonName.Size = new System.Drawing.Size(100, 20);
             this.txt_MainAddPersonName.TabIndex = 3;
             // 
-            // table_MainPersonHolder
+            // panel_MainPersonHolder
             // 
-            this.table_MainPersonHolder.AutoScroll = true;
-            this.table_MainPersonHolder.BackColor = System.Drawing.SystemColors.Control;
-            this.table_MainPersonHolder.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.table_MainPersonHolder.ColumnCount = 2;
-            this.table_MainPersonHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.table_MainPersonHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.table_MainPersonHolder.Location = new System.Drawing.Point(15, 52);
-            this.table_MainPersonHolder.Name = "table_MainPersonHolder";
-            this.table_MainPersonHolder.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.table_MainPersonHolder.RowCount = 1;
-            this.table_MainPersonHolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.table_MainPersonHolder.Size = new System.Drawing.Size(284, 324);
-            this.table_MainPersonHolder.TabIndex = 4;
+            this.panel_MainPersonHolder.AutoScroll = true;
+            this.panel_MainPersonHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panel_MainPersonHolder.Location = new System.Drawing.Point(15, 52);
+            this.panel_MainPersonHolder.Name = "panel_MainPersonHolder";
+            this.panel_MainPersonHolder.Size = new System.Drawing.Size(284, 96);
+            this.panel_MainPersonHolder.TabIndex = 4;
+            this.panel_MainPersonHolder.WrapContents = false;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(417, 599);
-            this.Controls.Add(this.table_MainPersonHolder);
+            this.Controls.Add(this.panel_MainPersonHolder);
             this.Controls.Add(this.txt_MainAddPersonName);
             this.Controls.Add(this.btn_MainAddPerson);
             this.Controls.Add(this.label_MainHouseholdName);
@@ -91,7 +85,7 @@
 		private System.Windows.Forms.Label label_MainHouseholdName;
         private System.Windows.Forms.Button btn_MainAddPerson;
         private System.Windows.Forms.TextBox txt_MainAddPersonName;
-        private System.Windows.Forms.TableLayoutPanel table_MainPersonHolder;
+        private System.Windows.Forms.FlowLayoutPanel panel_MainPersonHolder;
     }
 }
 

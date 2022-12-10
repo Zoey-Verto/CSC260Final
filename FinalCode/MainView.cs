@@ -12,8 +12,7 @@ namespace FinalCode {
 	
 	public partial class MainView : Form {
 		int numPeople = 0;
-		List<Label> personNames = new List<Label>();
-		List<Label> personTotals = new List<Label>();
+		List<uc_PersonPayTotal> PayTotals = new List<uc_PersonPayTotal>();
         public MainView() {
 			InitializeComponent();
 			
@@ -25,15 +24,20 @@ namespace FinalCode {
 			name = txt_MainAddPersonName.Text;
 			//txt_MainAddPersonName.Text = "";
 
+			PayTotals.Add(new uc_PersonPayTotal());
+
+			/*PayTotals[numPeople].
+
 			personNames.Add(new Label());
 			personNames[numPeople].Text = name;
 
 			personTotals.Add(new Label());
 			personTotals[numPeople].Text = "$0.00";
 
-			table_MainPersonHolder.Controls.Add(personNames[numPeople]);
-			table_MainPersonHolder.Controls.Add(personTotals[numPeople]);
+			panel_MainPersonHolder.Controls.Add(personNames[numPeople]);
+			panel_MainPersonHolder.Controls.Add(personTotals[numPeople]);
 			numPeople++;
+			*/
 		}
 	}
 }
