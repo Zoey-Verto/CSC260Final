@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace FinalCode
 		private Household _Household;
 		private List<Payment> _Payments;
 		private double _TotalSpent;
+		public uc_PersonPayTotal myUI;
 
 		public Person(string name, Household household)
 		{

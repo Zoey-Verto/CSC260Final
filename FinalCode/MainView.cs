@@ -11,28 +11,42 @@ using System.Windows.Forms;
 namespace FinalCode {
 	
 	public partial class MainView : Form {
-
+		public static Label totalSpentNum;
         public MainView() {
 			InitializeComponent();
-			
+			txt_HouseholdName.Text = Program.EpicHouse.HouseholdName;
+			label_TotalSpentNum.Text = Program.EpicHouse.TotalMoneySpent.ToString();
+			totalSpentNum = label_TotalSpentNum;
 		}
 
 		private void btn_MainAddPerson_Click(object sender, EventArgs e)
 		{
 			string name;
 			name = txt_MainAddPersonName.Text;
-			//txt_MainAddPersonName.Text = "";
+			if(name == "") {
+				return;
+			}
+			txt_MainAddPersonName.Text = "";
+			int num = Program.EpicHouse.NumPeople;
+			Program.EpicHouse.AddPerson(name);
 
-			Program.PayTotals.Add(new uc_PersonPayTotal());
-			Program.PayTotals[Program.numPeople].PersonName = name;
+			Program.PeopleHolder.Add(new uc_PersonPayTotal());
+			Program.PeopleHolder[num].PersonName = name;
 
-			panel_MainPersonHolder.Controls.Add(Program.PayTotals[Program.numPeople]);
-            Program.numPeople++;
+			Program.PeopleHolder[num].myPerson = Program.EpicHouse.getPerson(num);
+			Program.EpicHouse.getPerson(num).myUI = Program.PeopleHolder[num];
+
+			panel_MainPersonHolder.Controls.Add(Program.PeopleHolder[num]);
 		}
 
 		private void txt_HouseholdName_TextChanged(object sender, EventArgs e)
 		{
+			Program.EpicHouse.HouseholdName = txt_HouseholdName.Text;
+		}
 
+		private void btn_BalPayments_Click(object sender, EventArgs e)
+		{
+			Program.EpicHouse.BalancePayments();
 		}
 	}
 }

@@ -30,9 +30,10 @@
         {
             this.label_PersonName = new System.Windows.Forms.Label();
             this.label_TotalPaid = new System.Windows.Forms.Label();
-            this.txt_Payment = new System.Windows.Forms.TextBox();
             this.btn_AddToTotal = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
+            this.txt_Payment = new System.Windows.Forms.TextBox();
+            this.label_Owe = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label_PersonName
@@ -47,18 +48,11 @@
             // label_TotalPaid
             // 
             this.label_TotalPaid.AutoSize = true;
-            this.label_TotalPaid.Location = new System.Drawing.Point(104, 9);
+            this.label_TotalPaid.Location = new System.Drawing.Point(91, 35);
             this.label_TotalPaid.Name = "label_TotalPaid";
             this.label_TotalPaid.Size = new System.Drawing.Size(13, 13);
             this.label_TotalPaid.TabIndex = 1;
             this.label_TotalPaid.Text = "0";
-            // 
-            // txt_Payment
-            // 
-            this.txt_Payment.Location = new System.Drawing.Point(168, 32);
-            this.txt_Payment.Name = "txt_Payment";
-            this.txt_Payment.Size = new System.Drawing.Size(75, 20);
-            this.txt_Payment.TabIndex = 2;
             // 
             // btn_AddToTotal
             // 
@@ -80,11 +74,29 @@
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
+            // txt_Payment
+            // 
+            this.txt_Payment.Location = new System.Drawing.Point(168, 32);
+            this.txt_Payment.Name = "txt_Payment";
+            this.txt_Payment.Size = new System.Drawing.Size(75, 20);
+            this.txt_Payment.TabIndex = 2;
+            // 
+            // label_Owe
+            // 
+            this.label_Owe.AutoSize = true;
+            this.label_Owe.Location = new System.Drawing.Point(91, 9);
+            this.label_Owe.Name = "label_Owe";
+            this.label_Owe.Size = new System.Drawing.Size(22, 13);
+            this.label_Owe.TabIndex = 5;
+            this.label_Owe.Text = "NA";
+            this.label_Owe.Visible = false;
+            // 
             // uc_PersonPayTotal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
+            this.Controls.Add(this.label_Owe);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_AddToTotal);
             this.Controls.Add(this.txt_Payment);
@@ -101,8 +113,9 @@
 
         private System.Windows.Forms.Label label_PersonName;
         private System.Windows.Forms.Label label_TotalPaid;
-        private System.Windows.Forms.TextBox txt_Payment;
         private System.Windows.Forms.Button btn_AddToTotal;
         private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.TextBox txt_Payment;
+        private System.Windows.Forms.Label label_Owe;
     }
 }

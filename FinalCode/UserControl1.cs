@@ -12,6 +12,7 @@ namespace FinalCode
 {
     public partial class uc_PersonPayTotal : UserControl
     {
+        public Person myPerson;
         public uc_PersonPayTotal()
         {
             InitializeComponent();
@@ -26,6 +27,42 @@ namespace FinalCode
             set
             {
                 this.label_PersonName.Text = value;
+            }
+        }
+
+        public bool OweVisible
+        {
+            get
+            {
+                return this.label_Owe.Visible;
+            }
+            set
+            {
+                this.label_Owe.Visible = value;
+            }
+        }
+
+        public string OweText
+        {
+            get
+            {
+                return this.label_Owe.Text;
+            }
+            set
+            {
+                this.label_Owe.Text = value;
+            }
+        }
+
+        public string TotalPaid
+        {
+            get
+            {
+                return this.label_TotalPaid.Text;
+            }
+            set
+            {
+                this.label_TotalPaid.Text = value;
             }
         }
 
@@ -44,13 +81,17 @@ namespace FinalCode
             label_TotalPaid.Text = total.ToString();
 
             txt_Payment.Text = "";
+
+            Program.EpicHouse.TotalMoneySpent += payment;
+            MainView.totalSpentNum.Text = Program.EpicHouse.TotalMoneySpent.ToString();
+            myPerson.TotalSpent = total;
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            Program.PayTotals.Remove(this);
+            Program.PeopleHolder.Remove(this);
+            Program.EpicHouse.RemovePerson(myPerson);
             this.Dispose();
-            Program.numPeople--;
         }
     }
 }

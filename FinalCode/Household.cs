@@ -12,6 +12,7 @@ namespace FinalCode
 		private List<Person> _Residents;
 		private List<Chore> _Chores;
 		private double _TotalMoneySpent;
+		private int _idCount;
 
 		public Household(string houseHoldName)
 		{
@@ -45,6 +46,26 @@ namespace FinalCode
 			}
 		}
 
+		public int NumPeople
+		{
+			get
+			{
+				return _Residents.Count();
+			}
+		}
+
+		public int idCount
+		{
+			get
+			{
+				return _idCount;
+			}
+			set 
+			{ 
+				_idCount = value; 
+			}
+		}
+
 		public Person CreatePerson(string name)
 		{
 			return new Person(name, this);
@@ -54,6 +75,16 @@ namespace FinalCode
 		{
 			Person person = CreatePerson(name);
 			_Residents.Add(person);
+		}
+
+		public void RemovePerson(Person person)
+		{
+			_Residents.Remove(person);
+		}
+
+		public Person getPerson(int index)
+		{
+			return _Residents[index];
 		}
 
         public Chore CreateChore(string name, string desc)
@@ -77,7 +108,25 @@ namespace FinalCode
 
         public void BalancePayments()
 		{
-			
+			double average = _TotalMoneySpent / _Residents.Count();
+
+			foreach(Person p in _Residents){
+				p.TotalSpent -= average;
+
+				if(p.TotalSpent <= 0)
+				{
+					p.myUI.OweText = "Owes";
+					
+					
+				}
+				else
+				{
+					p.myUI.OweText = "Is Owed";
+				}
+				p.myUI.TotalPaid = Math.Abs(p.TotalSpent).ToString("#.##");
+				p.myUI.OweVisible = true;
+				p.myUI.Refresh();
+			}
 		}
 	}
 }

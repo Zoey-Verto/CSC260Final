@@ -6,9 +6,8 @@ using System.Windows.Forms;
 
 namespace FinalCode {
 	internal static class Program {
-		public static string HouseholdName = "Global";
-        public static int numPeople = 0;
-        public static List<uc_PersonPayTotal> PayTotals = new List<uc_PersonPayTotal>();
+		public static Household EpicHouse = new Household("My Household");
+        public static List<uc_PersonPayTotal> PeopleHolder = new List<uc_PersonPayTotal>();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,6 +18,4 @@ namespace FinalCode {
 			Application.Run(new MainView());
 		}
 	}
-
-
 }
